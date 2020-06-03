@@ -1,5 +1,17 @@
 <h2>{{ title }}</h2>
 <button (click)="setTitle()">Set Title</button>
+<br />
+<!--Two-Way Data Binding example-->
+<label for="nwBrand">Add a brand: </label>
+<input type="text" [(ngModel)]="nwBrand" />
+<button (click)="addBrand()">Add Brand</button>
+<p>{{ nwBrand }}</p>
+
+<h2>Our Brands:</h2>
+<ul *ngFor="let brand of brands">
+  <li>{{ brand }}</li>
+</ul>
+
 <div>
   <ul *ngFor="let shoe of shoes">
     <li>

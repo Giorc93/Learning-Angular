@@ -13,6 +13,7 @@ export class ShoeComponent implements OnInit, DoCheck, OnDestroy {
   public shoes: Array<Shoe>;
   public brands: string[];
   public color: string;
+  public nwBrand: string;
 
   constructor() {
     this.color = 'brown';
@@ -51,5 +52,11 @@ export class ShoeComponent implements OnInit, DoCheck, OnDestroy {
       }
     });
     console.log(this.brands);
+  }
+
+  addBrand() {
+    if (this.brands.indexOf(this.nwBrand) < 0) {
+      this.brands.push(this.nwBrand);
+    }
   }
 }
