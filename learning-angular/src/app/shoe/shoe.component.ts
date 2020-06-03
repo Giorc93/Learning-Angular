@@ -20,7 +20,7 @@ export class ShoeComponent implements OnInit, DoCheck, OnDestroy {
     this.brands = new Array();
     this.shoes = [
       new Shoe('Reebok Classic', 'Reebook', 'White', 40.99, true),
-      new Shoe('Adidas Samba', 'Adidas', 'Black', 24.99, true),
+      new Shoe('Adidas Samba', 'Adidas', 'Black', 19.99, true),
       new Shoe('Adidas Pace', 'Adidas', 'White', 50.99, true),
       new Shoe('Adidas Runner', 'Adidas', 'White', 29.99, true),
     ];

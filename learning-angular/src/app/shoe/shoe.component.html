@@ -21,8 +21,17 @@
 <div>
   <ul *ngFor="let shoe of shoes">
     <li>
-      <h3>Model: {{ shoe.model }}</h3>
-      <p>Brand: {{ shoe.brand }}</p>
+      <h3 [class.highPrice]="shoe.price > 40">Model: {{ shoe.model }}</h3>
+      <!--[class.className method]-->
+      <p
+        [ngClass]="{
+          boldFont: shoe.price > 20,
+          largeFont: shoe.brand == 'Reebook'
+        }"
+      >
+        <!--ngClass method.-->
+        Brand: {{ shoe.brand }}
+      </p>
       <p>Color: {{ shoe.color }}</p>
       <p>Price: {{ shoe.price }}</p>
       <span
