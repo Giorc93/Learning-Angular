@@ -6,7 +6,11 @@
     <title>Document</title>
   </head>
   <body>
-    <app-vid-game></app-vid-game>
+    <button (click)="hideList()">Hide List</button>
+    <button (click)="showList()">Show List</button>
+    <app-vid-game *ngIf="show"></app-vid-game>
+    <!--As soon as the component is no longer showed on the app (gets destroyed) the OnDestroy hook executes-->
+    <h2>{{ title }}</h2>
     <hr />
     <app-shoe></app-shoe>
   </body>

@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-vid-game',
   templateUrl: './vid-game.component.html',
   styleUrls: ['./vid-game.component.css'],
 })
-export class VidGameComponent implements OnInit {
+export class VidGameComponent implements OnInit, OnDestroy {
   public title: string;
   public list: string[];
 
@@ -22,4 +22,8 @@ export class VidGameComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    console.log('OnDestroy executed');
+  }
 }

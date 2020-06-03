@@ -1,1 +1,13 @@
-<h2>{{ model }}</h2>
+<h2>{{ title }}</h2>
+<button (click)="setTitle()">Set Title</button>
+<div>
+  <ul *ngFor="let shoe of shoes">
+    <li>
+      <h3>Model: {{ shoe.model }}</h3>
+      <p>Brand: {{ shoe.brand }}</p>
+      <p>Color: {{ shoe.color }}</p>
+      <p>Price: {{ shoe.price }}</p>
+      <p>Stock: {{ shoe.onStock }}</p>
+    </li>
+  </ul>
+</div>
