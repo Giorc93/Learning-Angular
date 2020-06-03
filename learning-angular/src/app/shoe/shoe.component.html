@@ -7,7 +7,29 @@
       <p>Brand: {{ shoe.brand }}</p>
       <p>Color: {{ shoe.color }}</p>
       <p>Price: {{ shoe.price }}</p>
+      <span
+        *ngIf="shoe.price < 30"
+        [style.background]="shoe.price < 25 ? 'green' : 'blue'"
+        >!Special Offer</span
+      >
       <p>Stock: {{ shoe.onStock }}</p>
     </li>
   </ul>
 </div>
+
+<p>Color:</p>
+
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'black'" [ngStyle]="{ background: color }">
+    Color is black
+  </li>
+  <li *ngSwitchCase="'red'" [ngStyle]="{ background: color }">
+    Color is red
+  </li>
+  <li *ngSwitchCase="'yellow'" [ngStyle]="{ background: color }">
+    Color is yellow
+  </li>
+  <li *ngSwitchCase="'brown'" [ngStyle]="{ background: color }">
+    Color is brown
+  </li>
+</ul>
