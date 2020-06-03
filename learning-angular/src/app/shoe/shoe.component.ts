@@ -59,4 +59,16 @@ export class ShoeComponent implements OnInit, DoCheck, OnDestroy {
       this.brands.push(this.nwBrand);
     }
   }
+
+  rmvBrand(id) {
+    this.brands.splice(id, 1);
+  }
+
+  onBlur() {
+    console.log('Out of the box');
+  }
+
+  altWord() {
+    alert(this.nwBrand);
+  }
 }
