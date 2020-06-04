@@ -1,11 +1,12 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Shoe } from '../models/shoe';
-import { newArray } from '@angular/compiler/src/util';
+import { ShoeService } from '../services/shoe/shoe.service'; //Importing service class from file
 
 @Component({
   selector: 'app-shoe',
   templateUrl: './shoe.component.html',
   styleUrls: ['./shoe.component.css'],
+  providers: [ShoeService], //Implementing the service class
 })
 //Hooks: Executes at a certain moment on the lifecycle of the component
 export class ShoeComponent implements OnInit, DoCheck, OnDestroy {
@@ -15,20 +16,17 @@ export class ShoeComponent implements OnInit, DoCheck, OnDestroy {
   public color: string;
   public nwBrand: string;
 
-  constructor() {
+  constructor(private _shoeService: ShoeService) {
+    //Loading service into constructor
     this.color = 'brown';
     this.brands = new Array();
-    this.shoes = [
-      new Shoe('Reebok Classic', 'Reebook', 'White', 40.99, true),
-      new Shoe('Adidas Samba', 'Adidas', 'Black', 19.99, true),
-      new Shoe('Adidas Pace', 'Adidas', 'White', 50.99, true),
-      new Shoe('Adidas Runner', 'Adidas', 'White', 29.99, true),
-    ];
   }
 
   //ngOnInit: Executes once the component has been loaded
   ngOnInit(): void {
     console.log('OnInit executed');
+    this.shoes = this._shoeService.getShoes(); //Getting data from service through function
+    console.log(this.shoes);
     this.listBrands();
   }
   //ngDoCheck: Executes everytime any change on the component or the app is made

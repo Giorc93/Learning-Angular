@@ -1,0 +1,11 @@
+<h2>Users List</h2>
+<input type="text" [(ngModel)]="userId" />
+<button (click)="getUserById(userId)">Search User</button>
+<div>
+  <p>User name: {{ user.first_name }} {{ user.last_name }}</p>
+  <img src="{{ user.avatar }}" alt="UserAvatar" />
+</div>
+<div *ngIf="user2">
+  <p>User name: {{ user2.first_name }} {{ user2.last_name }}</p>
+  <img src="{{ user2.avatar }}" alt="UserAvatar" />
+</div>
