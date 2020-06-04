@@ -10,6 +10,7 @@ import { ShoeComponent } from './shoe/shoe.component';
 import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
 import { ExternalComponent } from './external/external.component';
+import { TestPipe } from './pipes/test.pipes';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ExternalComponent } from './external/external.component';
     HomeComponent,
     TestComponent,
     ExternalComponent,
+    TestPipe,
   ],
   imports: [BrowserModule, FormsModule, routing, HttpClientModule], // The set of NgModules whose exported declarables are available to templates in this module.
   providers: [appRoutingProviders], // The set of injectable objects that are available in the injector of this module.

@@ -11,6 +11,7 @@ export class ExternalComponent implements OnInit {
   public user: any = {}; //Setting the user value 'empty' in order to avoid error 'non declared varible' on console
   public user2: any;
   public userId: number;
+  public actDate: Date;
 
   constructor(private _externalService: ExternalService) {} //Declaring priv prop _externalService
 
@@ -25,6 +26,8 @@ export class ExternalComponent implements OnInit {
         console.log('Something went wrong on the request');
       }
     );
+    this.actDate = new Date();
+    console.log(this.actDate);
   }
 
   getUserById(id) {

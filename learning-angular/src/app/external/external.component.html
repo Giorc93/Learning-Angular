@@ -9,3 +9,9 @@
   <p>User name: {{ user2.first_name }} {{ user2.last_name }}</p>
   <img src="{{ user2.avatar }}" alt="UserAvatar" />
 </div>
+
+<h2>Date</h2>
+<h3>{{ actDate | date: "fullDate" | lowercase }}</h3>
+<!--Text and date pipes-->
+<h2>Testing Pipe</h2>
+{{ 23 | test: 32 }}
