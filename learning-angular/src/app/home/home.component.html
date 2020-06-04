@@ -1,1 +1,14 @@
-<p>home works!</p>
+<h2>Home Page</h2>
+
+<div *ngIf="identified; then logged; else notShow">
+  <!--IfElse conditional-->
+  <!--Then using-->
+</div>
+<ng-template #logged>
+  <p>User identified</p>
+  <button (click)="logOut()">Logout</button>
+</ng-template>
+<ng-template #notShow>
+  <p>Please, identify</p>
+  <button (click)="logIn()">Login</button>
+</ng-template>
