@@ -6,12 +6,30 @@
     <title>Document</title>
   </head>
   <body>
+    <nav class="prefix">
+      <a [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
+      <!--routerLinkActive adds a class to the active link-->
+      &nbsp;
+      <a [routerLink]="['/shoe']" [routerLinkActive]="['active']">Shoe</a>
+      <!--routerLink loads the view of each component-->
+      &nbsp;
+      <a [routerLink]="['/vidGame']" [routerLinkActive]="['active']"
+        >Video Game</a
+      >
+      &nbsp;
+      <a [routerLink]="['/test']" [routerLinkActive]="['active']">Test</a>
+    </nav>
+    <hr />
+    <router-outlet></router-outlet>
+    <!--Loads the Component indicated on the path-->
+    <!--
     <button (click)="hideList()">Hide List</button>
     <button (click)="showList()">Show List</button>
-    <app-vid-game *ngIf="show"></app-vid-game>
+    <app-vid-game *ngIf="show"></app-vid-game>-->
     <!--As soon as the component is no longer showed on the app (gets destroyed) the OnDestroy hook executes-->
+    <!--
     <h2>{{ title }}</h2>
     <hr />
-    <app-shoe></app-shoe>
+    <app-shoe></app-shoe>-->
   </body>
 </html>
